@@ -1,7 +1,6 @@
 import './MyLabel.css';
-import { useState } from 'react';
 
-interface Props {
+export interface Props {
   /**
    * Text to display
    */

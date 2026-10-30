@@ -1,20 +1,45 @@
 {
-  "name": "02-my-storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "tny-custom-component",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "dev",
+    "tony",
+    "ojeda",
+    "curso"
+  ],
+  "license": "MIT",
+  "homepage": "https://tony-ojeda.com",
+  "repository": {
+    "url": "https://TODO...",
+    "type": "git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
   "scripts": {
     "dev": "npm run storybook",
-    "build": "tsc -b && vite build",
+    "build": "npm run clear && tsc -b && npm run copyfiles",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_7b6a8cb34666ff0"
-  },
-  "dependencies": {
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "chromatic": "npx chromatic --project-token=chpt_7b6a8cb34666ff0",
+    "clear": "rimraf dist/",
+    "copyfiles": "copyfiles -u 1 src/**/*.css dist/"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
@@ -34,16 +59,23 @@
     "@vitest/coverage-v8": "latest",
     "babel-plugin-react-compiler": "^1.0.0",
     "chromatic": "^18.13.3",
+    "copyfiles": "^2.4.1",
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-storybook": "^10.6.3",
     "globals": "^17.6.0",
     "playwright": "latest",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "rimraf": "^6.1.3",
     "storybook": "^10.6.3",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",
     "vitest": "latest"
+  },
+  "dependencies": {
+    "tny-custom-component": "^0.0.1"
   }
 }
